@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><%= title %></title>
+		<link rel="stylesheet" href="/stylesheets/style.css">
+		<link rel="stylesheet" href="/stylesheets/chunkfive-fontface.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="//netsh.pp.ua/upwork-demo/1/js/typeahead.js"></script>
+	</head>
+	<style>
+		@import url(https://fonts.googleapis.com/css?family=Exo:400,500,500italic,400italic,600,600italic,700,700italic,800,800italic,300,300italic);
+		
+		body {
+		  
+			/*The below background is just to add some color, you can set this to anything*/
+		  background: url(http://www.magic4walls.com/wp-content/uploads/2014/01/texture-blue-fonchik-simple-dark-colors-glow-background.jpg) no-repeat;
+		}
+		.tt-hint,
+        .product-item {
+           width: 100%;
+	    border-radius: 2px;
+	    border: 1px solid #dadada;
+	    padding: 5px;
+	        margin: 10px;
+        }
+
+        .tt-dropdown-menu {
+            width: 100%;
+            margin-top: 0px;
+            padding: 8px 12px;
+            background-color: #fff;
+           	
+            font-size: 18px;
+            color: #111;
+            background-color: #F1F1F1;
+        }
+		.product-field{
+		width: 100%;
+	    border-radius: 2px;
+	    border: 1px solid #dadada;
+	    padding: 5px;
+	        margin: 10px;
+    	}
+		.row{
+			width:100%;
+		}
+		.item-section{
+			    padding-left: 5px;
+			    float: left;
+			    width: 30%;
+		}
+		.row label{
+		font-weight: bold;
+	    font-size: 15px;
+	    color: gray;
+	    }
+	   .input-group-addon{
+	   width: 10px;
+	   } 
+	</style>
+	<body>
+		
+ <div class="container login-form">
+	<h2 class="login-title">Create Order</h2>
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<form action="placeOrder" method="post">
+				<div class="row row_0">
+					<div class="item-section" style="width:45%;">
+						<label>Product</label>
+						<select class="product-field product-item" name="product" onchange="getProductDetail(this.value,this);">
+						<option value=""> --- Select Product --- </option>
+						<% products.forEach(function(product) { %>
+							<option value="<%= product.id %>"> <%= product.item_name %> </option>
+						<% }); %>	
+						</select>
+						
+					</div>
+					<div class="item-section" style="width:45%;">
+						<label>Product Qty</label>
+						<input type="number" name="qty" id="product_qty" onchange="countAmount(this.value)" class="product-field qty" value="1" min="1" max="10" placeholder="Product Qty" />
+					</div>
+					<div class="item-section" style="width:10%;">
+						<label>Product Price</label>
+						<input type="text" name="price" id="product_total_price" class="product-field price"  placeholder="0.00/-" readonly="readonly" />
+					</div>
+				</div>
+				
+				
+				
+				<div>
+				&nbsp;
+				</div>
+				<button class="btn btn-primary btn-block login-button" type="submit" style="width: 15%" >Place Order</button>
+					
+			</form>			
+		</div>
+	</div>
+ </div>
+ <script>
+ var productAmount = 0;
+ function getProductDetail(id,obj){
+	 
+	 
+	 $.ajax({url: "searchItem?term="+id, success: function(result){
+
+		 if(result.length>0){
+			 result = result[0];
+			 $("."+$(obj).parent().parent().attr('class').split(" ")[1]).find('input:text').val(result.item_price);
+			 productAmount = result.item_price;
+		 }
+		 
+	    }});
+ }
+
+ function countAmount(fld)
+ {
+	 var product_qty = $("#product_qty").val()
+	 var total_amount = parseInt(product_qty) * productAmount
+	 $("#product_total_price").val(total_amount)
+ }
+
+ /*$(document).ready(function() {
+	 $('input.product-item').typeahead({
+	limit: 10,
+	
+	
+	remote: 'searchItem?term=%QUERY',
+
+	template: function (data) {
+		
+	return "<p class=\"searchSuggest-product\">" + data.item_name + "</p>";
+	}
+	});
+
+ })*/
+ </script>
+</body>
+</html>

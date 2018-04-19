@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><%= title %></title>
+		<link rel="stylesheet" href="/stylesheets/style.css">
+		<link rel="stylesheet" href="/stylesheets/chunkfive-fontface.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="//netsh.pp.ua/upwork-demo/1/js/typeahead.js"></script>
+	</head>
+	<style>
+		@import url(https://fonts.googleapis.com/css?family=Exo:400,500,500italic,400italic,600,600italic,700,700italic,800,800italic,300,300italic);
+		
+		body {
+		  
+			/*The below background is just to add some color, you can set this to anything*/
+		  background: url(http://www.magic4walls.com/wp-content/uploads/2014/01/texture-blue-fonchik-simple-dark-colors-glow-background.jpg) no-repeat;
+		}
+		.tt-hint,
+        .product-item {
+           width: 100%;
+	    border-radius: 2px;
+	    border: 1px solid #dadada;
+	    padding: 5px;
+	        margin: 10px;
+        }
+
+        .tt-dropdown-menu {
+            width: 100%;
+            margin-top: 0px;
+            padding: 8px 12px;
+            background-color: #fff;
+           	
+            font-size: 18px;
+            color: #111;
+            background-color: #F1F1F1;
+        }
+		.product-field{
+		width: 100%;
+	    border-radius: 2px;
+	    border: 1px solid #dadada;
+	    padding: 5px;
+	        margin: 10px;
+    	}
+		.row{
+			width:100%;
+		}
+		.item-section{
+			    padding-left: 5px;
+			    float: left;
+			    width: 30%;
+		}
+		.row label{
+		font-weight: bold;
+	    font-size: 15px;
+	    color: gray;
+	    }
+	   .input-group-addon{
+	   width: 10px;
+	   } 
+	</style>
+	<body>
+		
+ <div class="container login-form">
+    <h2 class="login-title">Login : Customer </h2><a href="/logout" style="float:right;color:blue;font-size:17px;" >Log Out</a>
+	<h2 class="login-title" style="clear:both;">My Orders</h2>
+	
+	<div  class="panel panel-default">
+		<div class="panel-body">
+				<table>
+					<thead>
+						<tr>
+							<th>Order #</th>
+							<th>Product Name</th>
+							<th>Status</th>
+							<th>Order Amount</th>
+							<th>Order Date</th>
+							
+						</tr>
+					</thead>
+					<tbody>
+					<% myOrders.forEach(function(order) { %>
+						<tr>
+							<td><%= order.order_id %></td>
+							<td><%= order.product_name %></td>
+							<td><%= order.order_status %></td>
+							<td><%= order.order_amount %></td>
+							<td><%= order.created_date %></td>
+							
+						</tr>
+					<% }); %>	
+					</tbody>
+				</table>
+				<br>
+				<a href="create" style="background: #337ab7;color: #fff;border-radius: 5px;text-decoration: none;">Create New Order</a>	
+		</div>
+	</div>
+ </div>
+
+</body>
+</html>
