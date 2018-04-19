@@ -5,11 +5,11 @@ var mysql = require('mysql');
 
 
 var pool = mysql.createPool({
-  host: "localhost",
-  user: "root",
-  //password: "sns",
-  password: "",
-  database: "customer_orders",
+  host: "myinstance1.cna0iyo8yllx.us-east-2.rds.amazonaws.com",
+  user: "user1",
+  password: "password",
+  //password: "",
+  database: "cus_order",
   connectionLimit: 10,
   supportBigNumbers: true
 });
