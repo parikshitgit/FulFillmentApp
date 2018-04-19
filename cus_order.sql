@@ -65,7 +65,7 @@ INSERT INTO `items` (`id`, `item_name`, `qty`, `item_price`) VALUES
 (3, 'Keyboard', 50, 250),
 (4, 'Mobile Phone', 100, 12000),
 (5, 'Mouse USB', 10, 150),
-(6, 'Detol', 10, 10);
+(6, 'Dock', 10, 100);
 
 -- --------------------------------------------------------
 
