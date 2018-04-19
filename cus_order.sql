@@ -109,7 +109,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `phone`, `address`, `city`, `state`, `username`, `password`, `profile_type`) VALUES
-(1, 'Super', 'Admin', 'admin@gmail.com', 1234567890, 'Gwl', 'city', 'M.P.', 'admin', 'admin', 2);
+(1, 'Super', 'Admin', 'admin@gmail.com', 1234567890, '1630', 'Sunrise', 'FL', 'admin', 'admin', 2);
 
 
 -- --------------------------------------------------------
