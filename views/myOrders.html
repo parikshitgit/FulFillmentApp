@@ -11,7 +11,7 @@
         <script src="//netsh.pp.ua/upwork-demo/1/js/typeahead.js"></script>
       <script>
         var x = document.getElementById("myDIV");
-        x.style.display = "none";
+        x.style.display = "block";
           function showorder() {
     var x = document.getElementById("myDIV");
     if (x.style.display === "none") {
@@ -98,7 +98,7 @@
     left: 0;
     background-color: #3493d8;
     overflow-x: hidden;
-    padding-top: 20px;
+    padding-top: 85px;
 }
 
 .sidenav a {
@@ -124,20 +124,21 @@
   </style>
   <body>
     <div class="sidenav">
-  <a href="#" style="background: #337ab7;color: #fff;border-radius: 1px;text-decoration: none;">About</a>
-  <a href="#" onclick="showorder()" style="background: #337ab7;color: #fff;border-radius: 1px;text-decoration: none;">View Orders</a>
-  <a href="create" style="background: #337ab7;color: #fff;border-radius: 1px;text-decoration: none;">Create New Order</a> 
+  <a href="#" style="background: #3493d8;color: #fff;border-radius: 1px;text-decoration: none;">About</a>
+  <a href="#" onclick="showorder()" style="background: #3493d8;color: #fff;border-radius: 1px;text-decoration: none;">View Orders</a>
+  <a href="create" style="background: #3493d8;color: #fff;border-radius: 1px;text-decoration: none;">Create New Order</a> 
   
 </div>
 
 
   <div class="header_title">
      <div class="header_title_name"><i class="fa fa-user" aria-hidden="true"></i> Login : Customer</div>
+    <h2>Order Processing Application</h2>
      <div class="header_title_logout"><a href="/logout" style="color:white;" >Log Out</a></div>
      <div style="clear:both;"></div>
   </div>  
  <div class="main">
-  <h2>Order Processing Application</h2>
+  
   <p></p>
 </div>
  <div id="myDIV" class="container login-form">
@@ -183,6 +184,9 @@
     </div>
   </div>
  </div>
-
+<script>
+  var x = document.getElementById("myDIV");
+        x.style.display = "block";
+ </script>
 </body>
 </html>
