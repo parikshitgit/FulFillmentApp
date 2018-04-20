@@ -58,13 +58,16 @@
       font-size: 15px;
       color: gray;
       }
-     .input-group-addon{
+      .input-group-addon{
      width: 10px;
      } 
      .header_title
      {
-        padding: 20px;
+          padding: 20px;
           background: #3493d8;
+          position: fixed;
+        width: 100%;
+        z-index: 999;
      }
      .header_title_name{
             width: 50%;
@@ -77,18 +80,58 @@
              color: white;
              text-align:right;
      }
+  .sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 50px;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sidenav a {
+    
+    text-decoration: none;
+    font-size: 18px;
+    color: #818181;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.main {
+    float:right; /* Same as the width of the sidenav */
+    padding-top:50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+     
   </style>
   <body>
   <div class="header_title">
      <div class="header_title_name"><i class="fa fa-user" aria-hidden="true"></i> Login : Admin</div>
      <div class="header_title_logout"><a href="/logout" style="color:white;" >Log Out</a></div>
      <div style="clear:both;"></div>
-  </div>    
+  </div>  
+   <div class="sidenav">
+  <a href="/adminOrders/getOrders">All Orders</a>
+  
+  
+</div>
+<div class="main">    
  <div class="container login-form">
   
-  <h2 style="clear:both;"  class="login-title">All Orders</h2>
+  <h3 style="clear:both;"  class="login-title">All Orders</h3>
   <div class="panel panel-default">
-    <div class="panel-body">
+    <div class="panel-body" style="overflow-y: scroll; height:500px;">
         <table class="table table-bordered">
           <thead>
             <tr>
@@ -106,7 +149,7 @@
               <td><%= order.order_id %></td>
               <td><%= order.product_name %></td>
               <td><%= order.order_status %></td>
-              <td>$<%= order.order_amount %></td>
+              <td><%= order.order_amount %></td>
               <td><%= order.created_date %></td>
               <td>
                 <%if (order.order_amount > 1000 && order.order_status === 'Processing') { %>
@@ -122,6 +165,7 @@
           
     </div>
   </div>
+ </div>
  </div>
 
 </body>
