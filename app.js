@@ -10,7 +10,7 @@ var customerOrders = require('./routes/customerOrders');
 var session = require('express-session');
 var adminOrders = require('./routes/adminOrders');
 var index = require('./routes/index');
-var getAllAdminOrders = require('./routes/adminAllOrders');
+//var getAllAdminOrders = require('./routes/adminAllOrders');
 
 var app = express();
 
@@ -38,7 +38,7 @@ app.use('/signUp', index);
 app.use('/adminOrders', adminOrders);
 app.use('/order', customerOrders);
 app.use('/rest', restService);
-app.use('/rest', adminAllOrders);
+//app.use('/rest', adminAllOrders);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
