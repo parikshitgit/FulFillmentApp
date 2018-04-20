@@ -47,7 +47,7 @@ router.get('/myOrders', function(req, res) {
     res.redirect('/');
   }
 
-  var getMyOrders = "SELECT co.order_id,co.order_status,co.order_amount,DATE_FORMAT(co.created_date,'%d/%m/%Y') as 'created_date',ci.item_id as 'product_id',i.item_name as 'product_name' FROM customer_orders as co, order_items as ci,items as i WHERE co.user_id='"+userId+"' and co.order_id = ci.order_id and ci.item_id = i.id order by co.order_id desc";
+  var getMyOrders = "SELECT co.order_id,co.order_status,co.order_amount,DATE_FORMAT(co.created_date,'%m/%d/%Y') as 'created_date',ci.item_id as 'product_id',i.item_name as 'product_name' FROM customer_orders as co, order_items as ci,items as i WHERE co.user_id='"+userId+"' and co.order_id = ci.order_id and ci.item_id = i.id order by co.order_id desc";
   console.log("getMyOrders========================>"+getMyOrders);
   db.executeMyQuery(getMyOrders, function(err, results) {
 
