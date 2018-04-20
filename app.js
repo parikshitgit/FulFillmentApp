@@ -38,7 +38,7 @@ app.use('/signUp', index);
 app.use('/adminOrders', adminOrders);
 app.use('/order', customerOrders);
 app.use('/rest', restService);
-//app.use('/rest', adminAllOrders);
+app.use('/adminAllOrders', adminAllOrders);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
