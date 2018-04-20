@@ -77,8 +77,50 @@
              color: white;
              text-align:right;
      }
+    .sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #3493d8;
+    overflow-x: hidden;
+    padding-top: 85px;
+}
+
+.sidenav a {
+    padding: 6px 6px 6px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #3493d8;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.main {
+    margin-left: 200px; /* Same as the width of the sidenav */
+}
+    
+    .hidden{ display: none; }
+    
+ @media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
   </style>
   <body>
+    
+ <div class="sidenav">
+  <a href="#" style="background: #3493d8;color: #fff;border-radius: 1px;text-decoration: none;">Help</a>
+  <a href="#" style="background: #3493d8;color: #fff;border-radius: 1px;text-decoration: none;">All Orders</a>
+  <a href="create" style="background: #3493d8;color: #fff;border-radius: 1px;text-decoration: none;">Pending Approval</a> 
+  
+</div>
+    
   <div class="header_title">
      <div class="header_title_name"><i class="fa fa-user" aria-hidden="true"></i> Login : Admin</div>
      <div class="header_title_logout"><a href="/logout" style="color:white;" >Log Out</a></div>
