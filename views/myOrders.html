@@ -144,14 +144,16 @@
   <p></p>
 </div>
     
+    <% if (success_message.length > 0) { %>
+    <div class="alert alert-success col-sm-12"><span style="float:left;"><%= success_message %></span> </div>
+  <% } %>
+    
     <div id="myDIV" style="display: none">
  <div id="myDIV2" class="container login-form">
 
    
 
-    <% if (success_message.length > 0) { %>
-    <div class="alert alert-success col-sm-12"><span style="float:left;"><%= success_message %></span> </div>
-  <% } %>
+    
   <h2 class="login-title" style="clear:both;">My Orders</h2>
   
      
@@ -189,9 +191,6 @@
   </div>
     </div>
  </div>
-<script>
-  $(document).ready(function() {
-         document.getElementById(myDIV).style.display = 'none';}
- </script>
+
 </body>
 </html>
