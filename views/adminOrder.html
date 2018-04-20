@@ -106,7 +106,7 @@
               <td><%= order.order_id %></td>
               <td><%= order.product_name %></td>
               <td><%= order.order_status %></td>
-              <td><%= order.order_amount %></td>
+              <td>$<%= order.order_amount %></td>
               <td><%= order.created_date %></td>
               <td>
                 <%if (order.order_amount > 1000 && order.order_status === 'Processing') { %>
