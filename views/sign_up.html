@@ -1,82 +1,95 @@
 
 <!DOCTYPE html>
 <html>
-	<head>
-		<title><%= title %></title>
-		<link rel="stylesheet" href="/stylesheets/style.css">
-		<link rel="stylesheet" href="/stylesheets/chunkfive-fontface.css">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/chunkfive-fontface.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	</head>
-	<style>
-		@import url(https://fonts.googleapis.com/css?family=Exo:400,500,500italic,400italic,600,600italic,700,700italic,800,800italic,300,300italic);
-		
-	
-		
-		.login-form{width:390px;margin-top:10%;}
-		.login-title{font-family: 'Exo', sans-serif;text-align:center;}
-		.login-userinput{margin-bottom: 10px;}
-		.login-button{margin-top:10px;}
-		.login-options{margin-bottom:0px;}
-		.login-forgot{float: right;}
-	</style>
-	<body>
-		
+  </head>
+  <style>
+    @import url(https://fonts.googleapis.com/css?family=Exo:400,500,500italic,400italic,600,600italic,700,700italic,800,800italic,300,300italic);
+    
+  
+    
+    .login-form{width:390px;margin-top:10%;}
+    .login-title{font-family: 'Exo', sans-serif;text-align:center;}
+    .login-userinput{margin-bottom: 10px;}
+    .login-button{margin-top:10px;}
+    .login-options{margin-bottom:0px;}
+    .login-forgot{float: right;}
+  </style>
+  <body>
+    
  <div class="container login-form">
                 
                 <% if (message.length > 0) { %>
-					<div class="alert alert-danger col-sm-12"><%= message %></div>
-				<% } %>
-				
-				<% if (success_message.length > 0) { %>
-					<div class="alert alert-success col-sm-12"><%= success_message %></div>
-				<% } %>
-				
-	<h2 class="login-title">- Sign Up Form -</h2>
-	<div class="panel panel-default">
-		<div class="panel-body">
-			<form action="/addUser" name="addUser" method="post">
-				<div class="input-group login-userinput">
-					<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-					<input id="firstName" type="text" class="form-control" required="" name="firstName" placeholder="First Name">
-				</div>
-				<div class="input-group login-userinput">
-					<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-					<input id="last_name" type="text" class="form-control" required="" name="last_name" placeholder="Last Name">
-				</div>
-				
-				<div class="input-group login-userinput">
-					<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-					<input id="email" type="text" class="form-control" name="email" placeholder="Email">
-				</div>
-				<div class="input-group login-userinput">
-					<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-					<input id="loginId" type="text" class="form-control" required="" name="loginId" placeholder="Login Id">
-				</div>
-				<div class="input-group login-userinput">
-					<span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-					<input  id="password" type="password" class="form-control" required="" name="password" placeholder="Password">
-					<span id="showPassword" class="input-group-btn">
-			            <button class="btn btn-default reveal" type="button"><i class="glyphicon glyphicon-eye-open"></i></button>
-			        </span>  
-				</div>
-				<div class="input-group login-userinput">
-					<span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-					<input  id="repassword" type="password" class="form-control" required="" name="repassword" placeholder="Re-Enter Password">
-					<span id="showPassword" class="input-group-btn">
-			            <button class="btn btn-default reveal" type="button"><i class="glyphicon glyphicon-eye-open"></i></button>
-			        </span>  
-				</div>
-				
-				<button class="btn btn-primary btn-block login-button" type="submit"><i class="fa fa-sign-in"></i> Sign Up</button>
-				<div class="checkbox login-options">
-					<label></label>
-					<a href="/" class="login-forgot">Login</a>
-				</div>		
-			</form>			
-		</div>
-	</div>
+          <div class="alert alert-danger col-sm-12"><%= message %></div>
+        <% } %>
+        
+        <% if (success_message.length > 0) { %>
+          <div class="alert alert-success col-sm-12"><span style="float:left;"><%= success_message %>, Click to </span> <a style="float:left;padding:0px;" href="/" class="login-forgot">Login</a></div>
+        <% } %>
+        
+  <h2 class="login-title">- Sign Up Form -</h2>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <form action="/addUser" name="addUser" method="post">
+        <div class="input-group login-userinput">
+          <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+          <input id="firstName" type="text" class="form-control" required="" name="firstName" placeholder="First Name">
+        </div>
+        <div class="input-group login-userinput">
+          <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+          <input id="last_name" type="text" class="form-control" required="" name="last_name" placeholder="Last Name">
+        </div>
+        
+        <div class="input-group login-userinput">
+          <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+          <input id="email" type="text" class="form-control" name="email" placeholder="Email">
+        </div>
+        <div class="input-group login-userinput">
+          <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+          <input id="loginId" type="text" class="form-control" required="" name="loginId" placeholder="Login Id">
+        </div>
+        <div class="input-group login-userinput">
+          <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+          <input  id="password" type="password" class="form-control" required="" name="password" placeholder="Password">
+          <span id="showPassword" class="input-group-btn">
+                  <button class="btn btn-default reveal" type="button"><i class="glyphicon glyphicon-eye-open"></i></button>
+              </span>  
+        </div>
+        <div class="input-group login-userinput">
+          <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+          <input  id="repassword" type="password" class="form-control" required="" name="repassword" placeholder="Re-Enter Password">
+          <span id="showPassword" class="input-group-btn">
+                  <button class="btn btn-default reveal" type="button"><i class="glyphicon glyphicon-eye-open"></i></button>
+              </span>  
+        </div>
+        
+        <button class="btn btn-primary btn-block login-button" id="sign_Up" onclick="return validateFunction()" type="submit"><i class="fa fa-sign-in"></i> Sign Up</button>
+        <div class="checkbox login-options">
+          <label></label>
+          <a href="/" class="login-forgot">Login</a>
+        </div>    
+      </form>     
+    </div>
+  </div>
  </div>
+ <script>
+    function validateFunction()
+    {
+          var password = $("#password").val()
+          var repassword = $("#repassword").val()
+
+          if(password!=repassword)
+              {
+                 alert("RePassword should be macth with password")
+                 return false;
+              }
+    }
+ </script>
 </body>
 </html>
