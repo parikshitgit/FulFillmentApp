@@ -10,7 +10,7 @@ var customerOrders = require('./routes/customerOrders');
 var session = require('express-session');
 var adminOrders = require('./routes/adminOrders');
 var index = require('./routes/index');
-//var getAllAdminOrders = require('./routes/adminAllOrders');
+var getAllAdminOrders = require('./routes/adminAllOrders');
 
 var app = express();
 
