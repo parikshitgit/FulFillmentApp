@@ -126,7 +126,7 @@
     <div class="sidenav">
   <a href="#" style="background: #3493d8;color: #fff;border-radius: 1px;text-decoration: none;">About</a>
   <a href="#" onclick="showorder()" style="background: #3493d8;color: #fff;border-radius: 1px;text-decoration: none;">View Orders</a>
-  <a href="create" style="background: #3493d8;color: #fff;border-radius: 1px;text-decoration: none;">Create New Order</a> 
+  <a href="create" style="background: #3493d8;color: #fff;border-radius: 1px;text-decoration: none;">New Order</a> 
   
 </div>
 
@@ -185,8 +185,8 @@
   </div>
  </div>
 <script>
-  var x = document.getElementById("myDIV");
-        x.style.display = "block";
+  $(document).ready(function() {
+         document.getElementById(myDIV).style.display = 'none';}
  </script>
 </body>
 </html>
