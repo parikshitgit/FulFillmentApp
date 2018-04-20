@@ -9,6 +9,16 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="//netsh.pp.ua/upwork-demo/1/js/typeahead.js"></script>
+      <script>
+          function showorder() {
+    var x = document.getElementById("myDIV");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+      </script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <style>
@@ -113,7 +123,7 @@
   <body>
     <div class="sidenav">
   <a href="#">About</a>
-  <a href="#">View Orders</a>
+  <a href="#" onclick="showorder()">View Orders</a>
   <a href="create" style="background: #337ab7;color: #fff;border-radius: 5px;text-decoration: none;">Create New Order</a> 
   
 </div>
@@ -128,7 +138,7 @@
      <div style="clear:both;"></div>
   </div>  
     
- <div class="container login-form">
+ <div id="myDIV" class="container login-form">
 
    
 
