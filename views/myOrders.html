@@ -10,6 +10,8 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="//netsh.pp.ua/upwork-demo/1/js/typeahead.js"></script>
       <script>
+        var x = document.getElementById("myDIV");
+        x.style.display = "none";
           function showorder() {
     var x = document.getElementById("myDIV");
     if (x.style.display === "none") {
@@ -122,22 +124,22 @@
   </style>
   <body>
     <div class="sidenav">
-  <a href="#">About</a>
-  <a href="#" onclick="showorder()">View Orders</a>
-  <a href="create" style="background: #337ab7;color: #fff;border-radius: 5px;text-decoration: none;">Create New Order</a> 
+  <a href="#" style="background: #337ab7;color: #fff;border-radius: 1px;text-decoration: none;">About</a>
+  <a href="#" onclick="showorder()" style="background: #337ab7;color: #fff;border-radius: 1px;text-decoration: none;">View Orders</a>
+  <a href="create" style="background: #337ab7;color: #fff;border-radius: 1px;text-decoration: none;">Create New Order</a> 
   
 </div>
 
-<div class="main">
-  <h2>Order Processing Application</h2>
-  <p></p>
-</div>
+
   <div class="header_title">
      <div class="header_title_name"><i class="fa fa-user" aria-hidden="true"></i> Login : Customer</div>
      <div class="header_title_logout"><a href="/logout" style="color:white;" >Log Out</a></div>
      <div style="clear:both;"></div>
   </div>  
-    
+ <div class="main">
+  <h2>Order Processing Application</h2>
+  <p></p>
+</div>
  <div id="myDIV" class="container login-form">
 
    
