@@ -1,6 +1,6 @@
 Boot the app
 
-That’s all the setup you need. Phew. Now you can boot the app. If you are on OSX or Linux use the following command.
+Thatâ€™s all the setup you need. Phew. Now you can boot the app. If you are on OSX or Linux use the following command.
 
 DEBUG=express_example:* npm start
 
@@ -12,20 +12,10 @@ setup database configuration in
 
 node-order\routes\database.js file
 
-I used mysql for the database and cus_order.sql is in this directory so please restore it
+used mysql for the database and cus_order.sql is in this directory so please restore it
 
-You should see Express server listening on port 3000 and if you open http://127.0.0.1:3000 you’ll see the default Express page.
-
-https://stackoverflow.com/questions/16800418/how-to-properly-pass-mysql-connection-to-routes-with-express-js
+You should see Express server listening on port 3000 and if you open http://127.0.0.1:3000 youâ€™ll see the default Express page.
 
 
-https://shapeshed.com/creating-a-basic-site-with-node-and-express/
 
 Rest API:- http://127.0.0.1:3000/rest/updateOrder
-Input :- 
-{
-"orderId":"16",
-"orderStatus":"Approve"
-}
-
-orderStatus : Approve / Rejected
